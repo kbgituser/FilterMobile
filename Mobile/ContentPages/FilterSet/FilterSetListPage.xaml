@@ -1,0 +1,21 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile.ContentPages.FilterSetListPage">
+    <StackLayout>
+        <Label Text="Filter Sets" FontSize="24" HorizontalOptions="Center" />
+        <CollectionView x:Name="FilterSetCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding Name}" FontSize="18" />
+                        <Button Text="Details" CommandParameter="{Binding Id}" Clicked="OnDetailsClicked" />
+                        <Button Text="Edit" CommandParameter="{Binding Id}" Clicked="OnEditClicked" />
+                        <Button Text="Delete" CommandParameter="{Binding Id}" Clicked="OnDeleteClicked" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Create New" Clicked="OnCreateClicked" />
+        <Button Text="Back to Main Page" Clicked="OnBackToMainPageClicked" />
+  </StackLayout>
+</ContentPage>
